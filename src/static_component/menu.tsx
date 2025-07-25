@@ -4,42 +4,42 @@ export default function Menu() {
         {
             name: "Espresso",
             description: "Strong and bold shot of pure coffee.",
-            image: "./images/menu/coffee/espresso.jpg",
+            image: "/images/menu/espresso.jpg",
         },
         {
             name: "Latte",
             description: "Smooth espresso mixed with steamed milk.",
-            image: "./images/menu/coffee/latte.jpg",
+            image: "/images/menu/latte.jpg",
         },
         {
             name: "Cappuccino",
             description: "A balance of espresso, steamed milk, and foam.",
-            image: "./images/menu/coffee/cappuccino.jpg",
+            image: "/images/menu/cappuccino.jpg",
         },
         {
             name: "Americano",
             description: "Espresso diluted with hot water for a milder taste.",
-            image: "./images/menu/coffee/americano.jpg",
+            image: "/images/menu/americano.jpg",
         },
         {
             name: "Cold Brew",
             description: "Smooth and less acidic, steeped for 12+ hours.",
-            image: "./images/menu/coffee/coldbrew.jpg",
+            image: "/images/menu/coldbrew.jpg",
         },
         {
             name: "Mocha",
             description: "Chocolatey espresso blend topped with milk.",
-            image: "./images/menu/coffee/mocha.jpg",
+            image: "/images/menu/mocha.jpg",
         },
         {
             name: "Macchiato",
             description: "Espresso with just a touch of milk foam.",
-            image: "./images/menu/coffee/macchiato.jpg",
+            image: "/images/menu/macchiato.jpg",
         },
         {
             name: "Flat White",
             description: "Rich espresso and velvety microfoam.",
-            image: "./images/menu/coffee/flatwhite.jpg",
+            image: "/images/menu/flatwhite.jpg",
         },
     ];
 
@@ -52,7 +52,7 @@ export default function Menu() {
                     <div key={index} className="card bg-base-100 shadow-md">
                     <figure>
                         <img
-                        src={`${item.image}?w=400&h=300&auto=format`}
+                        src={`${item.image}`}
                         alt={item.name}
                         className="w-full h-60 object-cover"
                         />
