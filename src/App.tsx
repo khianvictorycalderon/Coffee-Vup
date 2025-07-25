@@ -15,12 +15,8 @@ export default function App() {
             OnClick: () => slideToID("about"),
           },
           {
-            Label: "Products",
-            OnClick: () => alert("Product Clicked"),
-          },
-          {
-            Label: "Pricing",
-            OnClick: () => alert("Pricing Clicked"),
+            Label: "Service",
+            OnClick: () => alert("Testimonials Clicked"),
           },
           {
             Label: "Testimonials",
@@ -44,7 +40,7 @@ export default function App() {
         Title="Coffee Vup"
         Description="Make coffee with love."
         Button={{
-          Label: "Get Started",
+          Label: "View Menu",
           OnClick: () => alert("Clicked")
         }}
       />
