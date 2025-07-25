@@ -6,6 +6,7 @@ import { slideToID, useOnScrollAt } from "./Utility";
 import Service from "./static_component/service";
 import Footer from "./static_component/footer";
 import CardList from "./components/card_list";
+import ContactUs from "./static_component/contact";
 
 const menuData = [
   {
@@ -94,7 +95,7 @@ export default function App() {
           },
           {
             Label: "Contact",
-            OnClick: () => alert("Contact Clicked"),
+            OnClick: () => slideToID("contact"),
           },
           // {
           //   Label: "Projects",
@@ -124,6 +125,8 @@ export default function App() {
       <CardList Title="Our Coffee Menu" Classname="bg-slate-900 pt-8" Data={menuData}/>
       <div id="testimonials"/>
       <CardList Title="Testimonials" Classname="bg-gray-100 text-slate-900 pt-8" Data={testimonialsData} ButtonEnabled={false} />
+      <div id="contact"/>
+      <ContactUs/>
       <Footer/>
     </>
   )
