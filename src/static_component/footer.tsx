@@ -29,20 +29,41 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Resources */}
+        {/* Image Credit Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Resources</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <button onClick={() => alert("Blog clicked")} className="hover:text-white">Blog</button>
-            </li>
-            <li>
-              <button onClick={() => alert("FAQ clicked")} className="hover:text-white">FAQs</button>
-            </li>
-            <li>
-              <button onClick={() => alert("Support clicked")} className="hover:text-white">Support</button>
-            </li>
-          </ul>
+          <h3 className="text-lg font-semibold mb-3">Image Credit</h3>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            By Bex Walton –{" "}
+            <a
+              href="//commons.wikimedia.org/wiki/File:Piccolo_at_filter_coffee_at_Wood_St_Coffee,_Walthamstow.jpg"
+              title="File:Piccolo at filter coffee at Wood St Coffee, Walthamstow.jpg"
+              className="underline text-blue-400 hover:text-white"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Wikimedia Commons
+            </a>, at{" "}
+            <a
+              href="https://www.flickr.com/photos/bexwalton/51333376222/"
+              className="underline text-blue-400 hover:text-white"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Flickr
+            </a>,{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/2.0"
+              className="underline text-blue-400 hover:text-white"
+              target="_blank" rel="noopener noreferrer"
+            >
+              CC BY 2.0
+            </a>,{" "}
+            <a
+              href="https://commons.wikimedia.org/w/index.php?curid=122469412"
+              className="underline text-blue-400 hover:text-white"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Link
+            </a>.
+          </p>
         </div>
 
         {/* Social Media */}
