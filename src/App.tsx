@@ -5,7 +5,64 @@ import About from "./static_component/about";
 import { slideToID, useOnScrollAt } from "./Utility";
 import Service from "./static_component/service";
 import Footer from "./static_component/footer";
-import Menu from "./static_component/menu";
+import CardList from "./components/card_list";
+
+const menuData = [
+  {
+    Name: "Espresso",
+    Description: "Strong and bold shot of pure coffee.",
+    Image: "/images/menu/espresso.jpg",
+    OnClick: () => alert("Buying Espresso"),
+  },
+  {
+    Name: "Latte",
+    Description: "Smooth espresso mixed with steamed milk.",
+    Image: "/images/menu/latte.jpg",
+    OnClick: () => alert("Buying Latte"),
+  },
+  {
+    Name: "Cappuccino",
+    Description: "A balance of espresso, steamed milk, and foam.",
+    Image: "/images/menu/cappuccino.jpg",
+    OnClick: () => alert("Buying Cappuccino"),
+  },
+  {
+    Name: "Americano",
+    Description: "Espresso diluted with hot water for a milder taste.",
+    Image: "/images/menu/americano.jpg",
+    OnClick: () => alert("Buying Americano"),
+  },
+  {
+    Name: "Cold Brew",
+    Description: "Smooth and less acidic, steeped for 12+ hours.",
+    Image: "/images/menu/coldbrew.jpg",
+    OnClick: () => alert("Buying Cold Brew"),
+  },
+  {
+    Name: "Mocha",
+    Description: "Chocolatey espresso blend topped with milk.",
+    Image: "/images/menu/mocha.jpg",
+    OnClick: () => alert("Buying Mocha"),
+  }
+];
+
+const testimonialsData = [
+  {
+    Name: "Sophia Reyes",
+    Description: `"Coffee Vup changed my mornings forever. Their cold brew is the smoothest I’ve ever had!"`,
+    Image: "/images/testimonials/sophia.jpg",
+  },
+  {
+    Name: "Liam Cruz",
+    Description: `"As a barista myself, I'm impressed with their quality beans and friendly staff. Highly recommended!"`,
+    Image: "/images/testimonials/liam.jpg",
+  },
+  {
+    Name: "Isabella Santos",
+    Description: `"Warm ambiance, top-tier coffee, and the perfect playlist. Coffee Vup is my go-to cafe now."`,
+    Image: "/images/testimonials/isabella.jpg",
+  },
+];
 
 export default function App() {
 
@@ -33,7 +90,7 @@ export default function App() {
           },
           {
             Label: "Testimonials",
-            OnClick: () => alert("Testimonials Clicked"),
+            OnClick: () => slideToID("testimonials"),
           },
           {
             Label: "Contact",
@@ -64,7 +121,9 @@ export default function App() {
       <div id="service"/>
       <Service/>
       <div id="menu"/>
-      <Menu/>
+      <CardList Title="Our Coffee Menu" Classname="bg-slate-900 pt-8" Data={menuData}/>
+      <div id="testimonials"/>
+      <CardList Title="Testimonials" Classname="bg-gray-100 text-slate-900 pt-8" Data={testimonialsData} ButtonEnabled={false} />
       <Footer/>
     </>
   )
