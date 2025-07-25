@@ -33,7 +33,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-3">Image Credit</h3>
           <p className="text-sm text-gray-400 leading-relaxed">
-            By Bex Walton –{" "}
+            By Bex Walton -{" "}
             <a
               href="//commons.wikimedia.org/wiki/File:Piccolo_at_filter_coffee_at_Wood_St_Coffee,_Walthamstow.jpg"
               title="File:Piccolo at filter coffee at Wood St Coffee, Walthamstow.jpg"
