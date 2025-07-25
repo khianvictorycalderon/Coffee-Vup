@@ -9,7 +9,7 @@ import Footer from "./static_component/footer";
 export default function App() {
 
   const [menuBGColor, setMenuBGColor] = useState<string>("bg-transparent");
-
+  // Nahh?
   useOnScrollAt(
     "hero",
     () => setMenuBGColor("bg-transparent"),
