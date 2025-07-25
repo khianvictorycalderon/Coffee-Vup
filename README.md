@@ -4,7 +4,7 @@ A simple front-end website landing page for a business
 ## Usage
 Just scroll around, much of the content are static for the sake of demo purpose.
 
-## To run this project (General Steps):
+## To run this project:
 1. Clone this repository `git clone https://github.com/khianvictorycalderon/Coffee-Vup.git`
 2. Run `npm install`
 3. Run `npm run dev`
