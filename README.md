@@ -17,6 +17,7 @@ This section is provided for reference only, to give you insight into how the pr
 ## Dependencies
 - `npm install tailwindcss@latest @tailwindcss/vite@latest`
 - `npm install daisyui@latest`
+- `npm install gh-pages --save-dev`
 
 ## Configuration Dependencies
 - Update `vite.config.ts`:
@@ -31,4 +32,8 @@ This section is provided for reference only, to give you insight into how the pr
   ```css
   @import "tailwindcss";
   @plugin "daisyui";
+  ```
+- Update `package.json`:
+  ```
+  "deploy": "gh-pages -d dist"
   ```
