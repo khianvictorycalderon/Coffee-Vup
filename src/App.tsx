@@ -5,6 +5,7 @@ import About from "./static_component/about";
 import { slideToID, useOnScrollAt } from "./Utility";
 import Service from "./static_component/service";
 import Footer from "./static_component/footer";
+import Menu from "./static_component/menu";
 
 export default function App() {
 
@@ -54,7 +55,7 @@ export default function App() {
           Description="Make coffee with love."
           Button={{
             Label: "View Menu",
-            OnClick: () => alert("Clicked")
+            OnClick: () => slideToID("menu")
           }}
         />
       </div>
@@ -62,7 +63,8 @@ export default function App() {
       <About/>
       <div id="service"/>
       <Service/>
-      <div id="footer"/>
+      <div id="menu"/>
+      <Menu/>
       <Footer/>
     </>
   )
