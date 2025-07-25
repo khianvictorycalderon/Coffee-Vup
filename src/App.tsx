@@ -1,14 +1,24 @@
+import { useState } from "react";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import About from "./static_component/about";
-import { slideToID } from "./Utility";
+import { slideToID, useOnScrollAt } from "./Utility";
 
 export default function App() {
+
+  const [menuBGColor, setMenuBGColor] = useState<string>("bg-transparent");
+
+  useOnScrollAt(
+    "about",
+    () => setMenuBGColor("bg-gray-800"),
+    () => setMenuBGColor("bg-transparent")
+  );
+
   return (
     <>
       <Navbar
         Brand="CoffeeVup"
-        ClassName="bg-transparent text-base"
+        ClassName={`${menuBGColor} text-base`}
         MenuItems={[
           {
             Label: "About",
