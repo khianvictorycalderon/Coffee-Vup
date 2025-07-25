@@ -3,15 +3,16 @@ import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import About from "./static_component/about";
 import { slideToID, useOnScrollAt } from "./Utility";
+import Service from "./static_component/service";
 
 export default function App() {
 
   const [menuBGColor, setMenuBGColor] = useState<string>("bg-transparent");
 
   useOnScrollAt(
-    "about",
-    () => setMenuBGColor("bg-gray-800"),
-    () => setMenuBGColor("bg-transparent")
+    "hero",
+    () => setMenuBGColor("bg-transparent"),
+    () => setMenuBGColor("bg-gray-800")
   );
 
   return (
@@ -45,17 +46,20 @@ export default function App() {
           // },
         ]}
       />
-      <Hero
-        BGImage="images/expresso.jpg"
-        Title="Coffee Vup"
-        Description="Make coffee with love."
-        Button={{
-          Label: "View Menu",
-          OnClick: () => alert("Clicked")
-        }}
-      />
+      <div id="hero">
+        <Hero
+          BGImage="images/expresso.jpg"
+          Title="Coffee Vup"
+          Description="Make coffee with love."
+          Button={{
+            Label: "View Menu",
+            OnClick: () => alert("Clicked")
+          }}
+        />
+      </div>
       <div id="about"/>
       <About/>
+      <Service/>
     </>
   )
 }
