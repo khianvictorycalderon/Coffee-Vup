@@ -30,49 +30,28 @@ export default function Menu() {
             name: "Mocha",
             description: "Chocolatey espresso blend topped with milk.",
             image: "/images/menu/mocha.jpg",
-        },
-        {
-            name: "Macchiato",
-            description: "Espresso with just a touch of milk foam.",
-            image: "/images/menu/macchiato.jpg",
-        },
-        {
-            name: "Flat White",
-            description: "Rich espresso and velvety microfoam.",
-            image: "/images/menu/flatwhite.jpg",
-        },
+        }
     ];
 
     return (
-        <section id="menu" className="bg-gray-50 text-slate-900 py-16 px-6">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl font-bold mb-10 text-center">Our Menu</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="bg-gray-100 text-slate-900 pb-16 px-8">
+            <h1 className="text-4xl font-bold mb-10 text-center">Our Coffee Menu</h1>
+            <div className="flex flex-wrap justify-center gap-8">
                 {menuItems.map((item, index) => (
-                    <div key={index} className="card bg-base-100 shadow-md">
+                <div key={index} className="card w-80 bg-white shadow-md">
                     <figure>
-                        <img
-                        src={`${item.image}`}
-                        alt={item.name}
-                        className="w-full h-60 object-cover"
-                        />
+                    <img src={item.image} alt={item.name} className="h-52 w-full object-cover" />
                     </figure>
                     <div className="card-body">
-                        <h2 className="card-title text-white">{item.name}</h2>
-                        <p className="text-sm text-white">{item.description}</p>
-                        <div className="card-actions justify-end">
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => alert(`Ordered: ${item.name}`)}
-                        >
-                            Buy Now
-                        </button>
-                        </div>
+                    <h2 className="card-title text-slate-900">{item.name}</h2>
+                    <p className="text-slate-900">{item.description}</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary" onClick={() => alert(`Buying ${item.name}`)}>Buy Now</button>
                     </div>
                     </div>
-                ))}
                 </div>
+                ))}
             </div>
-        </section>
+        </div>
     );
 }
