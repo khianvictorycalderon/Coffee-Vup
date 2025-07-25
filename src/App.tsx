@@ -1,5 +1,6 @@
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
+import About from "./static_component/about";
 
 export default function App() {
   return (
@@ -40,12 +41,13 @@ export default function App() {
       <Hero
         BGImage="images/expresso.jpg"
         Title="Coffee Vup"
-        Description="We'll make your coffee with love."
+        Description="Make coffee with love."
         Button={{
           Label: "Get Started",
           OnClick: () => alert("Clicked")
         }}
       />
+      <About/>
     </>
   )
 }
