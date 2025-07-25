@@ -1,6 +1,7 @@
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import About from "./static_component/about";
+import { slideToID } from "./Utility";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         MenuItems={[
           {
             Label: "About",
-            OnClick: () => alert("About Clicked"),
+            OnClick: () => slideToID("about"),
           },
           {
             Label: "Products",
@@ -47,6 +48,7 @@ export default function App() {
           OnClick: () => alert("Clicked")
         }}
       />
+      <div id="about"/>
       <About/>
     </>
   )
