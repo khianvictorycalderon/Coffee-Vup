@@ -27,7 +27,7 @@ export default function App() {
           },
           {
             Label: "Service",
-            OnClick: () => alert("Testimonials Clicked"),
+            OnClick: () => slideToID("service"),
           },
           {
             Label: "Testimonials",
@@ -59,6 +59,7 @@ export default function App() {
       </div>
       <div id="about"/>
       <About/>
+      <div id="service"/>
       <Service/>
     </>
   )
