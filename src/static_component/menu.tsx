@@ -4,42 +4,42 @@ export default function Menu() {
         {
             name: "Espresso",
             description: "Strong and bold shot of pure coffee.",
-            image: "./images/coffee/espresso.jpg",
+            image: "./images/menu/coffee/espresso.jpg",
         },
         {
             name: "Latte",
             description: "Smooth espresso mixed with steamed milk.",
-            image: "./images/coffee/latte.jpg",
+            image: "./images/menu/coffee/latte.jpg",
         },
         {
             name: "Cappuccino",
             description: "A balance of espresso, steamed milk, and foam.",
-            image: "./images/coffee/cappuccino.jpg",
+            image: "./images/menu/coffee/cappuccino.jpg",
         },
         {
             name: "Americano",
             description: "Espresso diluted with hot water for a milder taste.",
-            image: "./images/coffee/americano.jpg",
+            image: "./images/menu/coffee/americano.jpg",
         },
         {
             name: "Cold Brew",
             description: "Smooth and less acidic, steeped for 12+ hours.",
-            image: "./images/coffee/coldbrew.jpg",
+            image: "./images/menu/coffee/coldbrew.jpg",
         },
         {
             name: "Mocha",
             description: "Chocolatey espresso blend topped with milk.",
-            image: "./images/coffee/mocha.jpg",
+            image: "./images/menu/coffee/mocha.jpg",
         },
         {
             name: "Macchiato",
             description: "Espresso with just a touch of milk foam.",
-            image: "./images/coffee/macchiato.jpg",
+            image: "./images/menu/coffee/macchiato.jpg",
         },
         {
             name: "Flat White",
             description: "Rich espresso and velvety microfoam.",
-            image: "./images/coffee/flatwhite.jpg",
+            image: "./images/menu/coffee/flatwhite.jpg",
         },
     ];
 
