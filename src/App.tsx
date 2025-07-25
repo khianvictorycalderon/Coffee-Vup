@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import About from "./static_component/about";
 import { slideToID, useOnScrollAt } from "./Utility";
 import Service from "./static_component/service";
+import Footer from "./static_component/footer";
 
 export default function App() {
 
@@ -61,6 +62,8 @@ export default function App() {
       <About/>
       <div id="service"/>
       <Service/>
+      <div id="footer"/>
+      <Footer/>
     </>
   )
 }
