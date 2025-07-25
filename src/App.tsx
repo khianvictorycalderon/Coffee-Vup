@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import About from "./static_component/about";
@@ -74,6 +74,10 @@ export default function App() {
     () => setMenuBGColor("bg-transparent"),
     () => setMenuBGColor("bg-gray-800")
   );
+
+  useEffect(() => {
+    alert("This is a demo website created for presentation purposes only and does not represent a real business.");
+  },[]);
 
   return (
     <>
