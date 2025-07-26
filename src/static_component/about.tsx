@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <div className="bg-gray-100 text-slate-900 p-16">
-            <div className="max-w-4xl mx-auto space-y-6">
+            <div className="max-w-6xl mx-auto space-y-6">
             <h1 className="text-4xl font-bold">About Us</h1>
             <p className="text-lg leading-relaxed">
                 At <span className="font-semibold text-brown-700">Coffee Vup</span>, we believe coffee is more than just a drink — it's an experience.
