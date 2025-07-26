@@ -82,7 +82,7 @@ export default function App() {
   return (
     <>
       <Navbar
-        Brand="CoffeeVup"
+        Brand="Coffee Vup"
         ClassName={`${menuBGColor} text-white`}
         MenuItems={[
           {
