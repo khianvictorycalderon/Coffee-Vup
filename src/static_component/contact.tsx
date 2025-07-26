@@ -19,8 +19,40 @@ export default function ContactUs() {
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Contact Us</h2>
         <p className="mt-2 text-lg/8 text-gray-600">Have some questions or inquiries? Don't hestitate to get in touch!</p>
       </div>
-      <form onSubmit={(e: FormEvent<HTMLFormElement>) => {e.preventDefault(); alert("Submitted!")}} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      <form
+        onSubmit={(e: FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          const form = e.currentTarget;
+
+          const firstName = (form.elements.namedItem("first-name") as HTMLInputElement).value.trim();
+          const lastName = (form.elements.namedItem("last-name") as HTMLInputElement).value.trim();
+          const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+          const phone = (form.elements.namedItem("phone-number") as HTMLInputElement).value.trim();
+          const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const phoneRegex = /^[0-9\-+()\s]{7,20}$/;
+
+          if (!firstName || !lastName || !email || !phone || !message) {
+            alert("All fields are required.");
+            return;
+          }
+
+          if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          if (!phoneRegex.test(phone)) {
+            alert("Please enter a valid phone number.");
+            return;
+          }
+
+          alert("Form submitted successfully!");
+        }}
+
+        className="mx-auto mt-16 max-w-xl sm:mt-20"
+      ><div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
               First name
