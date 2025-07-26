@@ -1,6 +1,9 @@
 # Coffee Vup
 A simple front-end website landing page for a business
 
+## DISCLAIMER:
+This is a demo website created for presentation purposes only and does not represent a real business.
+
 ## Usage
 Just scroll around, much of the content are static for the sake of demo purpose.
 
