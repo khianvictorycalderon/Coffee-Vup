@@ -8,6 +8,10 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             Brewed with passion, served with love. Bringing coffee culture to life — one cup at a time.
           </p>
+          <p className="text-gray-400 text-sm">
+            Demo website created by {" "}
+            <a href="https://khian.netlify.app/" target="_blank" className="text-blue-400 underline">Khian Victory D. Calderon</a>
+          </p>
         </div>
 
         {/* Quick Links */}
