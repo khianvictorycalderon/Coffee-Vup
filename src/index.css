@@ -1,2 +1,17 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@theme {
+  --color-espresso: #1C1410;
+  --color-parchment: #F7F1E8;
+  --color-copper: #C45A28;
+  --color-bean: #8A7B5C;
+  --color-paper: #FAFAF8;
+
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+button {
+  cursor: pointer;
+}

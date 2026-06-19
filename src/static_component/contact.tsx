@@ -68,79 +68,109 @@ export default function ContactUs() {
     });
   };
 
-  return (
-    <div className="bg-gray-100 px-6 pb-24 sm:pb-32 lg:px-8">
-      {/* Skipping visual blob section for brevity */}
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Contact Us</h2>
-        <p className="mt-2 text-lg/8 text-gray-600">Have some questions or inquiries? Don't hesitate to get in touch!</p>
-      </div>
+  const inputClass = (hasError: string) =>
+    `block w-full rounded-sm bg-paper px-4 py-3 font-sans text-base text-espresso placeholder:text-bean/50 border ${
+      hasError ? "border-red-500" : "border-bean/30"
+    } focus:outline-none focus:border-copper transition-colors`;
 
-      <form onSubmit={handleSubmit} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          {/* First Name */}
-          <div>
-            <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">First name</label>
-            <div className="mt-2.5">
+  return (
+    <div className="bg-espresso text-parchment px-6 sm:px-12 py-24">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20">
+        <div>
+          <span className="font-mono text-copper text-xs tracking-[0.3em] uppercase">
+            Get in touch
+          </span>
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+            Let's talk coffee
+          </h2>
+          <p className="font-sans text-base text-parchment/60 mt-5 leading-relaxed max-w-sm">
+            Questions about an order, a wholesale account, or just want to
+            know what's on the roaster this week? Send it over.
+          </p>
+
+          <div className="mt-10 pt-8 border-t border-dashed border-bean/40 font-mono text-sm text-parchment/70 space-y-2">
+            <p>hello@coffeevup.com</p>
+            <p>+63 2 8123 4567</p>
+            <p className="text-parchment/40">Mon&ndash;Sat, 7am&ndash;6pm</p>
+          </div>
+        </div>
+
+        <form onSubmit={handleSubmit} method="POST">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label
+                htmlFor="first-name"
+                className="block font-mono text-[11px] tracking-[0.15em] uppercase text-bean mb-2"
+              >
+                First name
+              </label>
               <input
                 id="first-name"
                 name="firstName"
                 type="text"
                 value={formData.firstName}
                 onChange={handleChange}
-                className={`block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 ${
-                  errors.firstName ? "outline-red-500" : ""
-                }`}
+                className={inputClass(errors.firstName)}
               />
-              {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>}
+              {errors.firstName && (
+                <p className="mt-1.5 text-sm text-red-400">{errors.firstName}</p>
+              )}
             </div>
-          </div>
 
-          {/* Last Name */}
-          <div>
-            <label htmlFor="last-name" className="block text-sm/6 font-semibold text-gray-900">Last name</label>
-            <div className="mt-2.5">
+            <div>
+              <label
+                htmlFor="last-name"
+                className="block font-mono text-[11px] tracking-[0.15em] uppercase text-bean mb-2"
+              >
+                Last name
+              </label>
               <input
                 id="last-name"
                 name="lastName"
                 type="text"
                 value={formData.lastName}
                 onChange={handleChange}
-                className={`block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 ${
-                  errors.lastName ? "outline-red-500" : ""
-                }`}
+                className={inputClass(errors.lastName)}
               />
-              {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>}
+              {errors.lastName && (
+                <p className="mt-1.5 text-sm text-red-400">{errors.lastName}</p>
+              )}
             </div>
-          </div>
 
-          {/* Email */}
-          <div className="sm:col-span-2">
-            <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900">Email</label>
-            <div className="mt-2.5">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="email"
+                className="block font-mono text-[11px] tracking-[0.15em] uppercase text-bean mb-2"
+              >
+                Email
+              </label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 ${
-                  errors.email ? "outline-red-500" : ""
-                }`}
+                className={inputClass(errors.email)}
               />
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-1.5 text-sm text-red-400">{errors.email}</p>}
             </div>
-          </div>
 
-          {/* Phone */}
-          <div className="sm:col-span-2">
-            <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-gray-900">Phone number</label>
-            <div className="mt-2.5">
-              <div className="flex rounded-md bg-white outline-1 outline-gray-300 has-[input:focus]:outline-2 has-[input:focus]:outline-indigo-600">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="phone-number"
+                className="block font-mono text-[11px] tracking-[0.15em] uppercase text-bean mb-2"
+              >
+                Phone number
+              </label>
+              <div
+                className={`flex rounded-sm bg-paper border ${
+                  errors.phone ? "border-red-500" : "border-bean/30"
+                } focus-within:border-copper transition-colors`}
+              >
                 <select
                   id="country"
                   name="country"
-                  className="w-20 rounded-md py-2 pl-3 text-sm text-gray-500"
+                  className="w-20 rounded-sm py-3 pl-3 font-sans text-sm text-bean bg-transparent border-none focus:outline-none"
                 >
                   <option>PH</option>
                   <option>US</option>
@@ -157,43 +187,41 @@ export default function ContactUs() {
                   placeholder="123-456-7890"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`block w-full py-1.5 pl-2 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm ${
-                    errors.phone ? "outline-red-500" : ""
-                  }`}
+                  className="block w-full py-3 pl-2 pr-4 font-sans text-base text-espresso placeholder:text-bean/50 bg-transparent focus:outline-none"
                 />
               </div>
-              {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+              {errors.phone && <p className="mt-1.5 text-sm text-red-400">{errors.phone}</p>}
             </div>
-          </div>
 
-          {/* Message */}
-          <div className="sm:col-span-2">
-            <label htmlFor="message" className="block text-sm/6 font-semibold text-gray-900">Message</label>
-            <div className="mt-2.5">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="message"
+                className="block font-mono text-[11px] tracking-[0.15em] uppercase text-bean mb-2"
+              >
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className={`block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600 ${
-                  errors.message ? "outline-red-500" : ""
-                }`}
+                className={inputClass(errors.message)}
               />
-              {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
+              {errors.message && (
+                <p className="mt-1.5 text-sm text-red-400">{errors.message}</p>
+              )}
             </div>
           </div>
-        </div>
 
-        <div className="mt-10">
           <button
             type="submit"
-            className="hover:cursor-pointer block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="mt-8 w-full sm:w-auto btn border-none rounded-full bg-copper hover:bg-copper/90 text-paper font-sans text-sm tracking-[0.1em] uppercase font-medium px-10 h-12"
           >
-            Let's talk
+            Send message
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

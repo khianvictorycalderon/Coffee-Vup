@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import About from "./static_component/about";
@@ -13,44 +13,56 @@ const menuData = [
     Name: "Espresso",
     Description: "Strong and bold shot of pure coffee.",
     Image: "/images/menu/espresso.jpg",
+    Origin: "Sagada, PH",
+    Process: "Washed",
     OnClick: () => alert("Buying Espresso"),
   },
   {
     Name: "Latte",
     Description: "Smooth espresso mixed with steamed milk.",
     Image: "/images/menu/latte.jpg",
+    Origin: "Benguet, PH",
+    Process: "Honey",
     OnClick: () => alert("Buying Latte"),
   },
   {
     Name: "Cappuccino",
     Description: "A balance of espresso, steamed milk, and foam.",
     Image: "/images/menu/cappuccino.jpg",
+    Origin: "Sidamo, ET",
+    Process: "Natural",
     OnClick: () => alert("Buying Cappuccino"),
   },
   {
     Name: "Americano",
     Description: "Espresso diluted with hot water for a milder taste.",
     Image: "/images/menu/americano.jpg",
+    Origin: "Huila, CO",
+    Process: "Washed",
     OnClick: () => alert("Buying Americano"),
   },
   {
     Name: "Cold Brew",
     Description: "Smooth and less acidic, steeped for 12+ hours.",
     Image: "/images/menu/coldbrew.jpg",
+    Origin: "Sagada, PH",
+    Process: "Natural",
     OnClick: () => alert("Buying Cold Brew"),
   },
   {
     Name: "Mocha",
     Description: "Chocolatey espresso blend topped with milk.",
     Image: "/images/menu/mocha.jpg",
+    Origin: "Bukidnon, PH",
+    Process: "Honey",
     OnClick: () => alert("Buying Mocha"),
-  }
+  },
 ];
 
 const testimonialsData = [
   {
     Name: "Sophia Reyes",
-    Description: `"Coffee Vup changed my mornings forever. Their cold brew is the smoothest I’ve ever had!"`,
+    Description: `"Coffee Vup changed my mornings forever. Their cold brew is the smoothest I've ever had!"`,
     Image: "/images/testimonials/sophia.jpg",
   },
   {
@@ -66,72 +78,65 @@ const testimonialsData = [
 ];
 
 export default function App() {
-
   const [menuBGColor, setMenuBGColor] = useState<string>("bg-transparent");
-  
+
   useOnScrollAt(
     "hero",
     () => setMenuBGColor("bg-transparent"),
-    () => setMenuBGColor("bg-gray-800")
+    () => setMenuBGColor("bg-espresso/95 backdrop-blur-sm shadow-sm")
   );
-
-  useEffect(() => {
-    alert("This is a demo website created for presentation purposes only and does not represent a real business.");
-  },[]);
 
   return (
     <>
       <Navbar
         Brand="Coffee Vup"
-        ClassName={`${menuBGColor} text-white`}
+        ClassName={`${menuBGColor} text-parchment`}
         MenuItems={[
-          {
-            Label: "About",
-            OnClick: () => slideToID("about"),
-          },
-          {
-            Label: "Service",
-            OnClick: () => slideToID("service"),
-          },
-          {
-            Label: "Testimonials",
-            OnClick: () => slideToID("testimonials"),
-          },
-          {
-            Label: "Contact",
-            OnClick: () => slideToID("contact"),
-          },
-          // {
-          //   Label: "Projects",
-          //   Submenu: [
-          //     { Label: "Web App", OnClick: () => alert("Web App") },
-          //     { Label: "Mobile App", OnClick: () => alert("Mobile App") },
-          //   ],
-          // },
+          { Label: "About", OnClick: () => slideToID("about") },
+          { Label: "Service", OnClick: () => slideToID("service") },
+          { Label: "Testimonials", OnClick: () => slideToID("testimonials") },
+          { Label: "Contact", OnClick: () => slideToID("contact") },
         ]}
+        CtaButton={{
+          Label: "Order now",
+          OnClick: () => slideToID("menu"),
+        }}
       />
       <div id="hero">
         <Hero
           BGImage="images/expresso.jpg"
           Title="Coffee Vup"
-          Description="Make coffee with love."
+          Description="Small-batch roasted, sourced direct from farm to cup."
           Button={{
-            Label: "View Menu",
-            OnClick: () => slideToID("menu")
+            Label: "View menu",
+            OnClick: () => slideToID("menu"),
           }}
         />
       </div>
-      <div id="about"/>
-      <About/>
-      <div id="service"/>
-      <Service/>
-      <div id="menu"/>
-      <CardList Title="Our Coffee Menu" Classname="bg-slate-900 pt-8" Data={menuData}/>
-      <div id="testimonials"/>
-      <CardList Title="Testimonials" Classname="bg-gray-100 text-slate-900 pt-8" Data={testimonialsData} ButtonEnabled={false} />
-      <div id="contact"/>
-      <ContactUs/>
-      <Footer/>
+      <div id="about" />
+      <About />
+      <div id="service" />
+      <Service />
+      <div id="menu" />
+      <CardList
+        Title="On the menu"
+        Eyebrow="Roast list"
+        Classname="bg-espresso text-parchment"
+        Data={menuData}
+        Variant="roast"
+      />
+      <div id="testimonials" />
+      <CardList
+        Title="What people are saying"
+        Eyebrow="Testimonials"
+        Classname="bg-paper text-espresso"
+        Data={testimonialsData}
+        Variant="quote"
+        ButtonEnabled={false}
+      />
+      <div id="contact" />
+      <ContactUs />
+      <Footer />
     </>
-  )
+  );
 }
